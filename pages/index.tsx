@@ -20,8 +20,11 @@ function Home({
   top_ratedMovies,
   top_ratedShows,
 }:any) {
-  // console.log(popularMovies);
+  console.log(popularMovies);
+
   const{data:session} = useSession();
+  console.log(session);
+
   return (
     <div>
       <Head>

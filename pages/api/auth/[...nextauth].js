@@ -18,10 +18,10 @@ export default NextAuth({
       }
     }),
   ],
-  adapter: FirebaseAdapter({
-    db:db,
-    ...firestoreFunctions,
-  }),
+  // adapter: FirebaseAdapter({
+  //   db:db,
+  //   ...firestoreFunctions,
+  // }),
   secret: 'AUTHveryHARD',
   debug: true,
 

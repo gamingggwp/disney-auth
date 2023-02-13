@@ -9,6 +9,13 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
     }),
   ],
   adapter: FirebaseAdapter({
@@ -16,6 +23,7 @@ export default NextAuth({
     ...firestoreFunctions,
   }),
   secret: 'AUTHveryHARD'
+
 //   adapter: FirestoreAdapter({
 //     apiKey: process.env.FIREBASE_API_KEY,
 //     appId: process.env.FIREBASE_APP_ID,

@@ -15,6 +15,7 @@ export default NextAuth({
     db:db,
     ...firestoreFunctions,
   }),
+  secret: 'AUTHveryHARD'
 //   adapter: FirestoreAdapter({
 //     apiKey: process.env.FIREBASE_API_KEY,
 //     appId: process.env.FIREBASE_APP_ID,

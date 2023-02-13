@@ -5,7 +5,9 @@ import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/router";
 
 function Header() {
-    const { data: session,status } = useSession();
+    const { data: session,status } = useSession({
+        required: true,
+    });
     console.log("login session: ",session);
     console.log("login status: ",status);
 

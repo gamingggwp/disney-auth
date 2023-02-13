@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 function Header() {
     const { data: session } = useSession();
+    console.log(session);
     const router = useRouter();
     return (
         <header className='sticky bg-[#040714] flex h-[72px] top-0 z-[1000] items-center px-10 md:px-12'>

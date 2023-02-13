@@ -5,9 +5,7 @@ import { signIn, signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/router";
 
 function Header() {
-    const { data: session,status } = useSession({
-        required: true,
-    });
+    const { data: session,status } = useSession();
     console.log("login session: ",session);
     console.log("login status: ",status);
 
@@ -17,7 +15,7 @@ function Header() {
             <Image src="/images/logo.svg" width={80} height={80} className="cursor-pointer"
                 onClick={() => router.push("/")}
             />
-            {session && (
+            {status=="authenticated" && (
                 <div className='hidden ml-10 cusmd:flex items-center space-x-6'>
                     <a className='header-link group'>
                         <HomeIcon className='h-4' />

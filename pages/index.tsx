@@ -14,12 +14,12 @@ import Brands from './../components/Brands';
 import MoviesCollection from './../components/MoviesCollection';
 import ShowsCollection from './../components/ShowsCollection';
 
-const Home: NextPage = ({
+function Home({
   popularMovies,
   popularShows,
   top_ratedMovies,
   top_ratedShows,
-}) => {
+}:any) {
   // console.log(popularMovies);
   const{data:session} = useSession();
   return (

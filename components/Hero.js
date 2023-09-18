@@ -3,8 +3,20 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 function Hero() {
+  const fullScreenFunc = () => {
+    var docScreen = document.getElementById('mainLobby');
+    if(docScreen?.requestFullscreen){
+        if(!document.fullscreenElement){
+            docScreen.requestFullscreen();
+        }
+        else{
+            document.exitFullscreen();
+        }
+    }
+}
+
   return (
-    <section>
+    <section id='mainLobby'>
       <Head>
         <title>Log in | Disney</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,6 +46,8 @@ function Hero() {
             style={{objectFit: "contain"}}
           />
         </div>
+        <div className={`absolute bottom-0 right-0 h-[50px] w-[50px] p-2`} > <button className={`flex justify-center items-center h-full w-full bg-white/50 opacity-50 hover:opacity-100 rounded-xl text-3xl`} onClick={() => fullScreenFunc()} ><span>&#x26f6;</span></button> </div>
+
       </div>
     </section>
   )
